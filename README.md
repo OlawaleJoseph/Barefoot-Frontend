@@ -1,1 +1,1 @@
-# Barefoot-Frontend
+# Barefoot Nomad Front-End
