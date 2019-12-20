@@ -8,7 +8,8 @@
     "start": "webpack-dev-server --mode production",
     "build": "webpack --mode production",
     "eslint-fix": "eslint --fix src/**/*.jsx",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage && cat coverage/lcov.info | coveralls"
   },
   "jest": {
     "snapshotSerializers": [
@@ -56,6 +57,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.7.0"
+    "@babel/polyfill": "^7.7.0",
+    "coveralls": "^3.0.6"
   }
 }
