@@ -7,6 +7,7 @@
     "devStart": "webpack-dev-server --mode development",
     "start": "webpack-dev-server --mode production",
     "build": "webpack --mode production",
+    "eslint-fix": "eslint --fix src/**/*.jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -43,5 +44,8 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.7.0"
   }
 }
