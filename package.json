@@ -9,7 +9,7 @@
     "build": "npm run clean && webpack -p",
     "start": "npm run build && node server.js",
     "lint-fix": "eslint --fix src/**/*.jsx",
-    "test": "jest",
+    "test": "jest --updateSnapshot",
     "coverage": "jest --coverage && cat coverage/lcov.info | coveralls"
   },
   "jest": {
