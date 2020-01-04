@@ -1,5 +1,6 @@
 import React from 'react';
+import Nav from './navbar';
 
 export default () => (
-  <div>Welcome to BareFootNomad</div>
+  <Nav />
 );
