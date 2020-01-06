@@ -1,0 +1,73 @@
+.form-wrapper{
+    transform: translateY(12vh);
+    width: 60%;
+}
+
+.form-container{
+    width: 50vw;
+    background-color: #fff;
+}
+
+.customInput{
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+.customLabel{
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    transition: all ease-in-out 0.5s;
+}
+
+.customInput:valid + .customLabel,
+.customInput:focus ~ .customLabel{
+    bottom: 30px;
+}
+
+.customInput:valid + .customLabel{
+    display: none;
+}
+
+.error{
+    border-color: red !important;
+}
+
+.errorContainer{
+    position: relative;
+    top: -30px;
+    color: red;
+}
+
+.max-height{
+    height: var(--max-height);
+}
+
+.form-image{
+    background: url('../../assets/images/travel.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.form-group{
+    margin: 0;
+}
+
+.input-icon{
+    width: 46px;
+}
+
+
+@media (max-width: 768px) {
+    .form-container{
+    width: 100vw;
+}
+
+.form-wrapper{
+    transform: translateY(7vh);
+    width: 100%;
+}
+
+form.mt-5{
+    margin-top: 0!important;
+}
+}
