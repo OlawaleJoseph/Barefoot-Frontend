@@ -1,0 +1,5 @@
+.welcome-image{
+    height: calc(100vh - 56px);
+    background: url('../../assets/images/travel.jpg') center no-repeat;
+    background-size: cover;
+}
