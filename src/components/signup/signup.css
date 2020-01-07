@@ -34,8 +34,7 @@
 }
 
 .errorContainer{
-    position: relative;
-    top: -30px;
+    position: absolute;
     color: red;
 }
 
@@ -58,16 +57,16 @@
 
 
 @media (max-width: 768px) {
-    .form-container{
-    width: 100vw;
-}
+        .form-container{
+        width: 100vw;
+    }
 
-.form-wrapper{
-    transform: translateY(7vh);
-    width: 100%;
-}
+    .form-wrapper{
+        transform: translateY(7vh);
+        width: 80%;
+    }
 
-form.mt-5{
-    margin-top: 0!important;
-}
+    form.mt-5{
+        margin-top: 0!important;
+    }
 }
