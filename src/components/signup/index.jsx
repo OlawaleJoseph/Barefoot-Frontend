@@ -10,7 +10,10 @@ import {
   faEnvelope, faUsers, faUserCircle, faLock,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { connect } from 'react-redux';
+import { newUser } from '../../actions/auth';
 
+// eslint-disable-next-line no-shadow
 const Register = ({ register }) => {
   const initialValues = {
     firstName: '',
@@ -21,28 +24,26 @@ const Register = ({ register }) => {
 
   const schema = Yup.object().shape({
     firstName: Yup.string()
-      .min(2, 'First name must have at least 2 characters')
-      .max(100, 'First name cannot exceed 100 characters')
+      .min(3, 'First name must have at least 3 characters')
+      .max(30, 'First name cannot exceed 30 characters')
       .required('First name is required'),
     lastName: Yup.string()
-      .min(2, 'Last name must have at least 2 characters')
-      .max(100, 'Last name cannot exceed 100 characters')
+      .min(3, 'Last name must have at least 3 characters')
+      .max(30, 'Last name cannot exceed 30 characters')
       .required('Last name is required'),
     email: Yup.string()
       .email('Enter a valid email')
       .required('Email is required'),
     password: Yup.string()
-      .min(6, 'Password must have at least 6 characters')
-      .max(100, 'Password cannot exceed 100 characters')
+      .min(8, 'Password must have at least 8 characters')
+      .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!.@$%^&*-]).{8,}$/, 'Password must include an uppercase, lowercase, digit and special character')
       .required('Password is required'),
   });
 
   const submitForm = async (values, { setSubmitting, resetForm }) => {
-    console.log('Submitting');
     await register(values);
     resetForm();
     setSubmitting(false);
-    console.log('Done Submitting');
   };
 
   return (
@@ -55,8 +56,8 @@ const Register = ({ register }) => {
             <div className="form-image col-lg-6 hide" />
             <div className="form-container col-lg-6 col-md-12 py-5">
               <h3 className="text-center">NEW ACCOUNT?</h3>
-              <Form className="mt-5 container p-3">
-                <Form.Group controlId="first_name" className="p-3 mb-2" onSubmit={handleSubmit}>
+              <Form className="mt-5 container p-3" onSubmit={handleSubmit}>
+                <Form.Group controlId="firstName" className="p-3 mb-2" id="firstName-div">
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text className="input-icon">
@@ -77,7 +78,7 @@ const Register = ({ register }) => {
                   {touched.firstName && errors.firstName ? (
                     <Form.Text id="firstName-info" className="errorContainer">{errors.firstName}</Form.Text>) : null}
                 </Form.Group>
-                <Form.Group controlId="last_name" className="p-3 mb-2">
+                <Form.Group controlId="lastName" className="p-3 mb-2" id="lastName-div">
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text className="input-icon">
@@ -98,11 +99,11 @@ const Register = ({ register }) => {
                   {touched.lastName && errors.lastName ? (
                     <Form.Text id="lastName-info" className="errorContainer">{errors.lastName}</Form.Text>) : null}
                 </Form.Group>
-                <Form.Group controlId="email" className="p-3 mb-2">
+                <Form.Group controlId="email" className="p-3 mb-2" id="email-div">
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text className="input-icon">
-                        <FontAwesomeIcon icon={faEnvelope} size="md" />
+                        <FontAwesomeIcon icon={faEnvelope} />
                       </InputGroup.Text>
                     </InputGroup.Prepend>
                     <Form.Control
@@ -119,11 +120,11 @@ const Register = ({ register }) => {
                   {touched.email && errors.email ? (
                     <Form.Text id="email-info" className="errorContainer">{errors.email}</Form.Text>) : null}
                 </Form.Group>
-                <Form.Group controlId="password" className="p-3 mb-2">
+                <Form.Group controlId="password" className="p-3 mb-2" id="password-div">
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text className="input-icon">
-                        <FontAwesomeIcon icon={faLock} size="md" />
+                        <FontAwesomeIcon icon={faLock} />
                       </InputGroup.Text>
                     </InputGroup.Prepend>
                     <Form.Control
@@ -158,4 +159,4 @@ Register.propTypes = {
   register: PropTypes.func.isRequired,
 };
 
-export default Register;
+export default connect(null, { register: newUser })(Register);
