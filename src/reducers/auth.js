@@ -3,9 +3,8 @@ import {
 } from '../actions/actionType';
 
 const initialstate = {
-  isLoading: true,
   token: localStorage.getItem('authorization'),
-  errors: {},
+  isRegistered: false,
 };
 
 export default (state = initialstate, { type, payload }) => {
@@ -14,13 +13,12 @@ export default (state = initialstate, { type, payload }) => {
       localStorage.setItem('authorization', payload);
       return {
         ...state,
-        isLoading: false,
+        isRegistered: true,
       };
     case REGISTER_FAILURE:
       localStorage.removeItem('authorization');
       return {
         ...state,
-        isLoading: false,
         token: null,
         errors: payload,
       };
@@ -28,7 +26,6 @@ export default (state = initialstate, { type, payload }) => {
       localStorage.removeItem('authorization');
       return {
         ...state,
-        isLoading: false,
         token: null,
         errors: payload,
       };

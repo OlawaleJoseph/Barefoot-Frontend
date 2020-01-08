@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
@@ -5,7 +6,7 @@ import * as Yup from 'yup';
 import {
   Form, Button, InputGroup,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import {
   faEnvelope, faUsers, faUserCircle, faLock,
 } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +15,7 @@ import { connect } from 'react-redux';
 import { newUser } from '../../actions/auth';
 
 // eslint-disable-next-line no-shadow
-const Register = ({ register }) => {
+const Register = ({ register, isRegistered }) => {
   const initialValues = {
     firstName: '',
     lastName: '',
@@ -40,12 +41,13 @@ const Register = ({ register }) => {
       .required('Password is required'),
   });
 
-  const submitForm = async (values, { setSubmitting, resetForm }) => {
-    await register(values);
-    resetForm();
+  const submitForm = async (values, { setSubmitting }) => {
     setSubmitting(false);
+    await register(values);
   };
-
+  if (isRegistered) {
+    return <Redirect to="/emailVerification" />;
+  }
   return (
     <Formik initialValues={initialValues} validationSchema={schema} onSubmit={submitForm}>
       {({
@@ -156,7 +158,12 @@ const Register = ({ register }) => {
 };
 
 Register.propTypes = {
+  isRegistered: PropTypes.bool.isRequired,
   register: PropTypes.func.isRequired,
 };
 
-export default connect(null, { register: newUser })(Register);
+const mapStateTpProps = (state) => ({
+  isRegistered: state.auth.isRegistered,
+});
+
+export default connect(mapStateTpProps, { register: newUser })(Register);
