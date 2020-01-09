@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "devStart": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode production",
+    "build": "webpack --mode production",
+    "eslint-fix": "eslint --fix src/**/*.jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +20,32 @@
   "bugs": {
     "url": "https://github.com/OlawaleJoseph/Barefoot-Frontend/issues"
   },
-  "homepage": "https://github.com/OlawaleJoseph/Barefoot-Frontend#readme"
+  "homepage": "https://github.com/OlawaleJoseph/Barefoot-Frontend#readme",
+  "dependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.1",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-react": "^1.1.7",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.7.0"
+  }
 }
