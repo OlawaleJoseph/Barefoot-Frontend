@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../navbar';
 
 export default () => (
@@ -8,7 +9,11 @@ export default () => (
     <div className="d-flex flex-column text-center align-items-center landing-message-div">
       <h3>Travel made easy</h3>
       <p>Travel easy. Travel fast. Travel smooth</p>
-      <button className="btn btn-primary px-3" type="button">Travel Now!!!</button>
+      <button className="btn btn-primary px-3" type="button">
+        <Link to="/register">
+         Travel Now!!!
+        </Link>
+      </button>
     </div>
   </div>
 );
