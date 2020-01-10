@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing Page Navbar Navigation Links Should render Login Button 1`] = `ShallowWrapper {}`;
