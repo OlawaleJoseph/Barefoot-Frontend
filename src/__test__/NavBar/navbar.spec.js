@@ -20,7 +20,7 @@ describe('Landing Page Navbar', () => {
       expect(navList).toHaveLength(1);
       expect(navLinks).toHaveLength(4);
     });
-    it('Should render Login Button', () => {
+    it('Login Button', () => {
       const loginBtn = wrapper.find('.login-btn');
       const login = shallow(<Login />);
       expect(loginBtn).toHaveLength(1);

@@ -18,7 +18,7 @@ describe('Landing Page Message', () => {
     expect(signUpBtn).toHaveLength(1);
     expect(signUpBtn.text()).toEqual('Travel Now!!!');
   });
-  it('It should Open sign up page', () => {
+  it('Sign up button', () => {
     const register = shallow(<Register />);
     signUpBtn.simulate('click');
     expect(register).toMatchSnapshot();
