@@ -1,1 +1,13 @@
 @import url('./components/landingPage/landing.css');
+@import url('./components//navbar/nav.css');
+
+.overlay{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+    color:#fff;
+}

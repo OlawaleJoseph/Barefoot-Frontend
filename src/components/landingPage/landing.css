@@ -1,5 +1,10 @@
-.welcome-image{
-    height: calc(100vh - 56px);
+.landing-page-image{
+    height: 100vh;
     background: url('../../assets/images/travel.jpg') center no-repeat;
     background-size: cover;
+}
+
+.landing-message-div{
+    z-index: 999;
+    color: #fff;
 }
