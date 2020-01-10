@@ -19,7 +19,7 @@ const Navbar = () => (
           <li className="nav-item pl-3">
             <Link className="nav-link" to="/">ABOUT</Link>
           </li>
-          <li className="nav-item dropdown pl-3">
+          <li className="nav-item pl-3">
             <Link className="nav-link" to="/register">FAQ</Link>
           </li>
         </ul>
