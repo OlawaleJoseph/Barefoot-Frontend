@@ -9,6 +9,5 @@ describe('Not Found', () => {
   it('Shoud display Not found', () => {
     const wrapper = shallow(<App />);
     expect(wrapper).toMatchSnapshot();
-    expect(wrapper.text()).toEqual('Welcome to BareFootNomad');
   });
 });
