@@ -28,10 +28,10 @@
 
 @media (max-width: 768px) {
     .nav-item{
-        padding-left: 0!important;
+        padding-left: 0 !important;
     }
 
     .nav-wrapper{
-        padding: 0.6rem 1rem!important
+        padding: 0.6rem 1rem !important
     }
 }
