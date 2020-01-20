@@ -6,6 +6,7 @@
 .form-container{
     width: 50vw;
     background-color: #fff;
+    max-height: 450px;
 }
 
 .customInput{
@@ -20,25 +21,12 @@
     transition: all ease-in-out 0.5s;
 }
 
-.customInput:valid + .customLabel,
-.customInput:focus ~ .customLabel{
-    bottom: 30px;
-}
-
-.customInput:valid + .customLabel{
-    display: none;
-}
-
-.error{
-    border-color: red !important;
-}
-
 .errorContainer{
     color: red;
-}
-
-.max-height{
-    height: var(--max-height);
+    position: absolute;
+    left: 90px;
+    z-index: 33;
+    font-size: 70%;
 }
 
 .form-image{
@@ -57,12 +45,7 @@
 
 @media (max-width: 768px) {
         .form-container{
-        width: 100vw;
-    }
-
-    .form-wrapper{
-        transform: translateY(7vh);
-        width: 80%;
+        width: 90vw;
     }
 
     form.mt-5{

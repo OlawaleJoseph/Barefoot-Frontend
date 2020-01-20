@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Formik } from 'formik';
 import PropTypes from 'prop-types';
@@ -14,7 +13,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { connect } from 'react-redux';
 import { newUser } from '../../actions/auth';
 
-// eslint-disable-next-line no-shadow
 const Register = ({ register, isRegistered }) => {
   const initialValues = {
     firstName: '',
@@ -56,10 +54,10 @@ const Register = ({ register, isRegistered }) => {
         <div className="bg-primary px-auto py-auto w-100 max-height">
           <div className="container-fluid form-wrapper row justify-content-center m-auto">
             <div className="form-image col-lg-6 hide" />
-            <div className="form-container col-lg-6 col-md-12 py-5">
+            <div className="form-container col-lg-6 col-md-12 py-3">
               <h3 className="text-center">NEW ACCOUNT?</h3>
-              <Form className="mt-5 container p-3" onSubmit={handleSubmit}>
-                <Form.Group controlId="firstName" className="p-3 mb-2" id="firstName-div">
+              <Form className="mt-2 container p-3" onSubmit={handleSubmit}>
+                <Form.Group controlId="firstName" className="py-2 px-2 mb-3" id="firstName-div">
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text className="input-icon">
@@ -70,17 +68,16 @@ const Register = ({ register, isRegistered }) => {
                       className="customInput"
                       type="text"
                       name="firstName"
+                      placeholder="First Name"
                       value={values.firstName}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      required
                     />
-                    <Form.Label className="customLabel">First Name</Form.Label>
                   </InputGroup>
                   {touched.firstName && errors.firstName ? (
                     <Form.Text id="firstName-info" className="errorContainer">{errors.firstName}</Form.Text>) : null}
                 </Form.Group>
-                <Form.Group controlId="lastName" className="p-3 mb-2" id="lastName-div">
+                <Form.Group controlId="lastName" className="py-2 px-2 mb-3" id="lastName-div">
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text className="input-icon">
@@ -90,18 +87,17 @@ const Register = ({ register, isRegistered }) => {
                     <Form.Control
                       className="customInput"
                       name="lastName"
+                      placeholder="Last Name"
                       value={values.lastName}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       type="text"
-                      required
                     />
-                    <Form.Label className="customLabel">Last Name</Form.Label>
                   </InputGroup>
                   {touched.lastName && errors.lastName ? (
                     <Form.Text id="lastName-info" className="errorContainer">{errors.lastName}</Form.Text>) : null}
                 </Form.Group>
-                <Form.Group controlId="email" className="p-3 mb-2" id="email-div">
+                <Form.Group controlId="email" className="py-2 px-2 mb-3" id="email-div">
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text className="input-icon">
@@ -111,18 +107,17 @@ const Register = ({ register, isRegistered }) => {
                     <Form.Control
                       className="customInput"
                       name="email"
+                      placeholder="Email"
                       type="email"
                       value={values.email}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      required
                     />
-                    <Form.Label className="customLabel">Email</Form.Label>
                   </InputGroup>
                   {touched.email && errors.email ? (
                     <Form.Text id="email-info" className="errorContainer">{errors.email}</Form.Text>) : null}
                 </Form.Group>
-                <Form.Group controlId="password" className="p-3 mb-2" id="password-div">
+                <Form.Group controlId="password" className="py-2 px-2 mb-3" id="password-div">
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text className="input-icon">
@@ -132,18 +127,17 @@ const Register = ({ register, isRegistered }) => {
                     <Form.Control
                       className="customInput"
                       name="password"
+                      placeholder="Password"
                       value={values.password}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       type="password"
-                      required
                     />
-                    <Form.Label className="customLabel">Password</Form.Label>
                   </InputGroup>
                   {touched.password && errors.password ? (
                     <Form.Text id="password-info" className="errorContainer">{errors.password}</Form.Text>) : null}
                 </Form.Group>
-                <Button variant="primary" className="btn-block" type="submit" disabled={isSubmitting}> Register </Button>
+                <Button variant="primary" className="btn-block mt-4" type="submit" disabled={isSubmitting}> Register </Button>
               </Form>
               <div className="text-center">
                   Already have an account?
