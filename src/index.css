@@ -1,6 +1,10 @@
 @import url('./components/landingPage/landing.css');
-@import url('./components//navbar/nav.css');
+@import url('./components/navbar/nav.css');
 
+:root {
+    --max-height: 100vh;
+    --max-width: 100vw;
+}
 .overlay{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.8);

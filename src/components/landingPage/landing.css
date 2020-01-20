@@ -8,3 +8,7 @@
     z-index: 999;
     color: #fff;
 }
+
+.landing-page-image div.overlay{
+    height: var(--max-height)
+}
