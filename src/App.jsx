@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import App from './components/index';
 import Register from './components/signup';
 import EmailVerification from './components/authVerification';
+import Login from './components/login';
 import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route exact path="/register" component={Register} />
         <Route exat path="/emailverification" component={EmailVerification} />
         <App />
+        <Route exact path="/login" component={Login} />
       </Switch>
     </Router>
   </Provider>,

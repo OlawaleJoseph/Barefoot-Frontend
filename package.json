@@ -8,9 +8,13 @@
     "clean": "rm -rf dist/",
     "build": "npm run clean && webpack -p",
     "start": "npm run build && node server.js",
-    "lint-fix": "eslint --fix src/**/*.jsx",
-    "test": "jest --updateSnapshot",
+    "lint-fix": "eslint --fix src/**/*.js",
+    "test": "jest --updateSnapshot --verbose",
     "coverage": "jest --coverage && cat coverage/lcov.info | coveralls"
+  },
+  "engine": {
+    "node": "10.16.2",
+    "npm": "6.13.4"
   },
   "jest": {
     "snapshotSerializers": [
@@ -30,6 +34,7 @@
   "homepage": "https://github.com/OlawaleJoseph/Barefoot-Frontend#readme",
   "dependencies": {
     "@babel/core": "^7.7.5",
+    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
@@ -55,7 +60,6 @@
     "file-loader": "^5.0.2",
     "formik": "^2.0.7",
     "html-webpack-plugin": "^3.2.0",
-    "jest": "^24.9.0",
     "jquery": "^3.4.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
@@ -75,7 +79,7 @@
     "yup": "^0.28.0"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.7.0",
-    "coveralls": "^3.0.6"
+    "coveralls": "^3.0.6",
+    "jest": "^24.9.0"
   }
 }
