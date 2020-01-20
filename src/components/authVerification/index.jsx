@@ -2,6 +2,6 @@ import React from 'react';
 
 export default () => (
   <div>
-    Register
+    Verify you mail
   </div>
 );

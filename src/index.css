@@ -1,4 +1,19 @@
 @import url('./components/landingPage/landing.css');
+@import url('./components/signup/signup.css');
+
+:root{
+    --body-height: calc(100vh - 56px);
+    --max-height: 100vh;
+    --max-width: 100vw;
+}
+
+.form-control{
+    border-radius: 0;
+}
+
+.max-height{
+    height: var(--max-height);
+}
 @import url('./components/navbar/nav.css');
 
 :root {
