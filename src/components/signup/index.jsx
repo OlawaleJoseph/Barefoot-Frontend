@@ -51,7 +51,8 @@ const Register = ({ register, isRegistered }) => {
       {({
         values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting,
       }) => (
-        <div className="bg-primary px-auto py-auto w-100 max-height">
+        <div className="bg-primary px-auto py-auto w-100 max-height form-container-bg">
+          <div className="overlay w-100 max-height" />
           <div className="container-fluid form-wrapper row justify-content-center m-auto">
             <div className="form-image col-lg-6 hide" />
             <div className="form-container col-lg-6 col-md-12 py-3">

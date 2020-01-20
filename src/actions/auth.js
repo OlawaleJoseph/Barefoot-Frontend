@@ -30,7 +30,6 @@ export const newUser = (userObj) => async (dispatch) => {
     return dispatch({ type: REGISTER_CONFLICT });
   }
   Object.keys(result.errors).forEach((err) => {
-    console.log(err);
     const div = document.querySelector(`#${err}-div`);
     const e = document.createElement('small');
     e.textContent = result.errors;

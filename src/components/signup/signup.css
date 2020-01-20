@@ -1,6 +1,13 @@
 .form-wrapper{
     transform: translateY(12vh);
-    width: 60%;
+    max-width:860px;
+    z-index: 33;
+    position: relative;
+}
+
+.form-container-bg{
+    background: url('../../assets//images/form-bg.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .form-container{
@@ -12,7 +19,10 @@
 .customInput{
     border: none;
     border-bottom: 1px solid #ced4da;
+    box-shadow: none !important;
 }
+
+
 
 .customLabel{
     position: absolute;
@@ -30,7 +40,7 @@
 }
 
 .form-image{
-    background: url('../../assets/images/travel.jpg') no-repeat center;
+    background: url('../../assets/images/register.jpg') no-repeat center center;
     background-size: cover;
 }
 
