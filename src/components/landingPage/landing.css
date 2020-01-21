@@ -10,5 +10,6 @@
 }
 
 .landing-page-image div.overlay{
-    height: var(--max-height)
+    height: var(--max-height);
+    width: var(--max-width);
 }
